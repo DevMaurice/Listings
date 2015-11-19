@@ -18,8 +18,7 @@
 			<li><a href="/listing">Listing</a></li>	
 			@endif		
 		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<li><a href="/">Admin</a></li>
+		<ul class="nav navbar-nav navbar-right">			
 			@if(!Auth::check())
 				<li class="dropdown">			
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
