@@ -12,27 +12,16 @@ use Illuminate\Support\Facades\Input;
 
 class PageController extends Controller
 {
-    protected $categories;
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    function __construct() {
-
-        $this->categories = Category::all();
-    }
-    /**
+     /**
      * Returns the view that displays all the listing
      * 
      * @return view
      */
-    public function index()   {       
-
+    public function index()   
+    {
         $listings=Listing::with('category')->paginate(15);
 
         return view('page.home')
-                ->with('categories',$this->categories)
                 ->with('listings',$listings);
     }
 
@@ -56,8 +45,7 @@ class PageController extends Controller
                 ->get();
         
           return view('page.home')
-                ->with('listings',$listings)
-                ->with('categories',$this->categories);
+                ->with('listings',$listings);
     }
 
     /**
@@ -66,12 +54,11 @@ class PageController extends Controller
      * @param  $name Name of the category
      * @return View view
      */
-    public function searchCategory($name){        
+    public function searchCategory($name)
+    {        
         $cate=Category::where('name',$name)->first(); 
 
-
         return view('page.home')
-                ->with('listings',$cate->listings)
-                ->with('categories',$this->categories);
+                ->with('listings',$cate->listings);
     }
 }

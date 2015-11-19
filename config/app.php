@@ -147,6 +147,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
 
     ],
 
