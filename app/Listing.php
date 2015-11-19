@@ -32,7 +32,9 @@ class Listing extends Model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeMinimumAmount($query,$amount){
-
+        if(!isset($amount)){
+            return $query;
+        }
         return $query->where('amount','<=',$amount);
 
     }
@@ -45,7 +47,9 @@ class Listing extends Model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeLocation($query,$location){
-
+         if(!isset($location)){
+            return $query;
+        }
         return $query->where('location','like','%'.$location.'%');
 
     }
@@ -57,7 +61,9 @@ class Listing extends Model
      * @return   \Illuminate\Database\Eloquent\Builder        
      */
     public function scopeCategory($query,$category){
-
+         if(!isset($category)){
+            return $query;
+        }
         return $query->where('category_id',$category);
 
     }

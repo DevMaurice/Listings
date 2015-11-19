@@ -38,5 +38,6 @@ $router->group(['middleware' => 'auth', 'namespace' => 'Admin'], function($route
  */
 Route::get('/', 'PageController@index');
 Route::post('listing/search',array('as' => 'listing.search','uses' => 'PageController@search'));
-Route::get('category/{name}/search',array('as' => 'listing.searchbycode','uses' => 'PageController@searchCategory'));
+Route::get('category/{name}/search',array('as' => 'category.searchbycode','uses' => 'PageController@searchCategory'));
+Route::get('listing/{id}/search',array('as' => 'listing.searchbycode','uses' => 'PageController@show'));
 
