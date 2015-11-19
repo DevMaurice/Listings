@@ -9,8 +9,8 @@
 				  </div>
 				  <div class="panel-body">					
 					<div class="well well-lg">
-						<h3>ID: {{$cat->id}}</h3> </br>
-						<h3>Name: {{$cat->name}}</h3>
+						<h3>ID: {{$category->id}}</h3> </br>
+						<h3>Name: {{$category->name}}</h3>
 					</div>
 					
 				 	</div>

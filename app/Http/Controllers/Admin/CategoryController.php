@@ -57,9 +57,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        $cat=$category->first();
-
-        return view('admin.category.show',compact('cat'));
+        return view('admin.category.show',compact('category'));
     }
 
     /**
@@ -68,11 +66,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
-    {
-        $cat=$category->first();
-
-        return view('admin.category.create_edit',compact('cat'));
+    public function edit(Category $category) 
+    { 
+        return view('admin.category.create_edit',compact('category'));
     }
 
     /**

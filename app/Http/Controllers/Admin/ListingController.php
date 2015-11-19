@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
-use Illuminate\Http\Request;
+use App\Http\Requests\ListingCreateRequest;
+use App\Http\Requests\ListingUpdateRequest;
 use App\Listing;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Laracasts\Flash\Flash;
 
@@ -45,7 +47,7 @@ class ListingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,Listing $listing)
+    public function store(ListingCreateRequest $request)
     {
         $listing=new Listing();
         
@@ -78,9 +80,7 @@ class ListingController extends Controller
     public function show(Listing $listing)
     {
         $options=Category::lists('name','id')->all();
-        
-        $listing= $listing->first();
-         
+                 
         return view('admin.listing.show',compact('listing','options'));
     }
 
@@ -93,8 +93,6 @@ class ListingController extends Controller
     public function edit(Listing $listing)
     {
          $options=Category::lists('name','id')->all();
-
-         $listing= $listing->first();
          
         return view('admin.listing.create_edit',compact('listing','options'));
     }
@@ -106,7 +104,7 @@ class ListingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Listing $listing)
+    public function update(ListingUpdateRequest $request, Listing $listing)
     {
         $listing->name=$request->input('name');
         $listing->category_id=$request->input('category_id');

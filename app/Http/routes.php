@@ -10,19 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-/**
- *Route model binding
- * 
- */
-$router->model('category', 'App\Category');
-$router->model('listing', 'App\Listing');
 
-/**
- * Home page
- */
-Route::get('/', 'PageController@index');
-Route::post('listing/search',array('as' => 'listing.search','uses' => 'PageController@search'));
-Route::get('category/{name}',array('as' => 'listing.searchbycode','uses' => 'PageController@searchCategory'));
 
 
 /**
@@ -44,3 +32,11 @@ $router->group(['middleware' => 'auth', 'namespace' => 'Admin'], function($route
 	$router->resource('listing','ListingController');
 
 });
+
+/**
+ * Home page
+ */
+Route::get('/', 'PageController@index');
+Route::post('listing/search',array('as' => 'listing.search','uses' => 'PageController@search'));
+Route::get('category/{name}/search',array('as' => 'listing.searchbycode','uses' => 'PageController@searchCategory'));
+

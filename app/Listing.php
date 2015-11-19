@@ -46,7 +46,7 @@ class Listing extends Model
      */
     public function scopeLocation($query,$location){
 
-        return $query->where('location',$location);
+        return $query->where('location','like','%'.$location.'%');
 
     }
 

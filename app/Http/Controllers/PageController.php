@@ -22,8 +22,12 @@ class PageController extends Controller
 
         $this->categories = Category::all();
     }
-    public function index()   {
-       
+    /**
+     * Returns the view that displays all the listing
+     * 
+     * @return view
+     */
+    public function index()   {       
 
         $listings=Listing::with('category')->paginate(15);
 
@@ -32,35 +36,42 @@ class PageController extends Controller
                 ->with('listings',$listings);
     }
 
+    /**
+     * Returns the search result from the homepage form
+     * 
+     * @param  Request $request 
+     * @return View view
+     */
     public function search(Request $request)
     {
         $loc=Input::get('location'); 
         $category=Input::get('category_id');
         $max=Input::get('amount');
+      
 
-        // $listings= DB::table('listings')
-        //     ->where('location', 'like', '%'.$loc.'%')
-        //     ->where('amount','<=',$max)
-        //     ->where('$category_id','=', $category)
-        //     ->get();
-        if(isset($category)){
-            $listings=Listing::location($loc)->minimumAmount($max)->category($category)->get();
-        }
-         $listings=Listing::location($loc)->minimumAmount($max)->get();
-
+            $listings=Listing::location($loc)
+                ->minimumAmount($max)
+                ->category($category)
+                ->with('category')
+                ->get();
+        
           return view('page.home')
                 ->with('listings',$listings)
                 ->with('categories',$this->categories);
     }
 
+    /**
+     * Returns result of a given category of listing into a view
+     * 
+     * @param  $name Name of the category
+     * @return View view
+     */
     public function searchCategory($name){        
         $cate=Category::where('name',$name)->first(); 
 
-        // $listngs=DB::table('listings')->where('id',$cate['id'])->get();
 
         return view('page.home')
                 ->with('listings',$cate->listings)
                 ->with('categories',$this->categories);
-        // return $cate;
     }
 }

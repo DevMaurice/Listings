@@ -9,12 +9,12 @@
 				    <div class="form-group @if($errors->first('category_id')) has-error @endif ">
 				        {!! Form::label('category_id', 'Category', ['class' => 'control-label']) !!}
 				        {!! Form::select('category_id', array_pluck($categories,'name','id'), 
-				        [null=>'Select One'], ['id' => 'category_id', 'class' => ' form-control']) !!}
+				        [null=>'Select One'], ['id' => 'category_id', 'class' => ' form-control','required' => 'required']) !!}
 				        	<small class="text-danger">{{ $errors->first('category_id') }}</small>
 				    </div>
 				    <div class="form-group @if($errors->first('amount')) has-error @endif">
 				        {!! Form::label('amount', 'Amount', ['class' => 'control-label']) !!}
-				        	{!! Form::text('amount', null, ['class' => 'form-control']) !!}
+				        	{!! Form::text('amount', null, ['class' => 'form-control','required' => 'required']) !!}
 				        	<small class="text-danger">{{ $errors->first('amount') }}</small>
 				    </div>
 				

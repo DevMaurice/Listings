@@ -25,7 +25,7 @@
 					Cost:<h3>{{$listing->amount}}</h3>
 					</div>
 					<div class="thumbnail">
-						<img src="{{asset('pics/'.{{ $listing->photo}})}}" alt="Property Image" class="img-rounded" width="304" height="235">
+						<img src="{{asset('pics/'.$listing->photo)}}" alt="Property Image" class="img-rounded" width="304" height="235">
 						<div class="caption">
 							Property Image
 						</div>

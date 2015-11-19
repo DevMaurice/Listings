@@ -27,6 +27,12 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot($router);
+        /**
+         *Route model binding
+         * 
+         */
+        $router->model('category', 'App\Category');
+        $router->model('listing', 'App\Listing');
     }
 
     /**

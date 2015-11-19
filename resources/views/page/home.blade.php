@@ -11,7 +11,7 @@
 	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 		<ul class="list-group">
 			@foreach ($categories as $cat)			
-				<a href="/category/{{$cat->name}}" class="list-group-item">
+				<a href="/category/{{$cat->name}}/search" class="list-group-item">
 			       	 <i class="fa fa-bars"></i>   {{ $cat->name }} 
 			       	 <span class="badge">{{ $cat->listings->count() }}</span>
 		    	</a>
