@@ -14,13 +14,3 @@ body {
         max-height: 50px;
     }
 }
-
-.footer { 
-	background-color:red;
-    position:fixed;
-    bottom:0px;
-    left:0px;
-    right:0px;
-    height:50px;
-    margin-bottom:0px;
-} 
