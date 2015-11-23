@@ -102,7 +102,7 @@ class ListingController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Responsen
      */
     public function update(ListingUpdateRequest $request, Listing $listing)
     {

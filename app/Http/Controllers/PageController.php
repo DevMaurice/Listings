@@ -62,6 +62,12 @@ class PageController extends Controller
                 ->with('listings',$cate->listings);
     }
 
+    /**
+     * Shows a particular listing 
+     * 
+     * @param   $id 
+     * @return view 
+     */
     public function show($id)
     {
         $listing=Listing::findorFail($id);
