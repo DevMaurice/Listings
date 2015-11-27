@@ -12,15 +12,15 @@ class Category extends Model
 	 * 
 	 * @var array
 	 */
-    protected $fillable=['name'];
+    protected $fillable = ['name'];
 
     /**
      * A category contains many listings
      * 
      * @return App\Listing::class 
      */
-    public function listings(){
-
+    public function listings()
+    {
     	return $this->hasMany('App\Listing');
     }
 }
