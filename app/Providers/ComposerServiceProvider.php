@@ -14,7 +14,7 @@ class ComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer(
-        ['page.home','page.show'],'App\Http\ViewComposers\CategoriesComposer'
+        ['page.home','page.show'], 'App\Http\ViewComposers\CategoriesComposer'
         );
     }
 

@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
-
 class ListingUpdateRequest extends Request
 {
     /**
@@ -24,9 +22,9 @@ class ListingUpdateRequest extends Request
     public function rules()
     {
         return [
-            'name'=>'required|max:255',
-            'location'=>'required|max:255',
-            'amount'=>'required|numeric'
+            'name'     => 'required|max:255',
+            'location' => 'required|max:255',
+            'amount'   => 'required|numeric',
         ];
     }
 }
