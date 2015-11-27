@@ -16,7 +16,7 @@
 				    </div>
 				    <div class="col-xs-4">
 				    <div class="form-group @if($errors->first('amount')) has-error @endif">
-				        {!! Form::label('amount', 'Maximum', ['class' => 'control-label']) !!}
+				        {!! Form::label('amount', 'Maximum Price', ['class' => 'control-label']) !!}
 				        	{!! Form::text('amount', null, ['class' => 'form-control','required'=>'required']) !!}
 				        	<small class="text-danger">{{ $errors->first('amount') }}</small>
 				    </div>
