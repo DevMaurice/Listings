@@ -11,33 +11,30 @@
 |
 */
 
-
-
 /**
- * Authentication and Registration Controllers
+ * Authentication and Registration Controllers.
  */
 Route::controllers([
-    'auth' => 'Auth\AuthController',
+    'auth'     => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);
 
-/**
+/*
  *Admin controls.
  *
  * Require one to login.
  * 
  */
-$router->group(['middleware' => 'auth', 'namespace' => 'Admin'], function($router) {
-	$router->resource('category','CategoryController');
-	$router->resource('listing','ListingController');
+$router->group(['middleware' => 'auth', 'namespace' => 'Admin'], function ($router) {
+    $router->resource('category', 'CategoryController');
+    $router->resource('listing', 'ListingController');
 
 });
 
-/**
- * Home page
+/*
+ * Home page routers
  */
 Route::get('/', 'PageController@index');
-Route::post('listing/search',array('as' => 'listing.search','uses' => 'PageController@search'));
-Route::get('category/{name}/search',array('as' => 'category.searchbycode','uses' => 'PageController@searchCategory'));
-Route::get('listing/{id}/search',array('as' => 'listing.searchbycode','uses' => 'PageController@show'));
-
+Route::post('listing/search', ['as' => 'listing.search','uses' => 'PageController@search']);
+Route::get('category/{name}/search', ['as' => 'category.searchbycode','uses' => 'PageController@searchCategory']);
+Route::get('listing/{id}/search', ['as' => 'listing.searchbycode','uses' => 'PageController@show']);
