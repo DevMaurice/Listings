@@ -32,11 +32,9 @@ $router->group(['middleware' => 'auth', 'namespace' => 'Admin'], function ($rout
 });
 
 /*
-<<<<<<< HEAD
- * Home page
-=======
+ *
  * Home page routers
->>>>>>> master
+ * 
  */
 Route::get('/', 'PageController@index');
 Route::post('listing/search', ['as' => 'listing.search','uses' => 'PageController@search']);
