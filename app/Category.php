@@ -16,7 +16,11 @@ class Category extends Model
     /**
      * A category contains many listings.
      * 
+<<<<<<< HEAD
      * @return App\Listing::class
+=======
+     * @return Listing class 
+>>>>>>> master
      */
     public function listings()
     {
