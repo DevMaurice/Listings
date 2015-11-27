@@ -16,10 +16,10 @@ class Category extends Model
     /**
      * A category contains many listings.
      * 
-     * @return App\Listing::class 
+     * @return Listing class 
      */
     public function listings()
     {
-         return $this->hasMany('App\Listing');
+        return $this->hasMany('App\Listing');
     }
 }
