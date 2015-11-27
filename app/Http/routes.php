@@ -31,7 +31,7 @@ $router->group(['middleware' => 'auth', 'namespace' => 'Admin'], function ($rout
 
 });
 
-/**
+/*
  *
  * Home page routers
  * 
