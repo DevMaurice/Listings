@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
-
 class ListingCreateRequest extends Request
 {
     /**
@@ -24,10 +22,10 @@ class ListingCreateRequest extends Request
     public function rules()
     {
         return [
-            'name'=>'required|max:255',
-            'location'=>'required|max:255',
-            'photo' => 'mimes:jpeg,jpg,png',
-            'amount'=>'required|numeric'
+            'name'     => 'required|max:255',
+            'location' => 'required|max:255',
+            'photo'    => 'mimes:jpeg,jpg,png',
+            'amount'   => 'required|numeric',
         ];
     }
 }
